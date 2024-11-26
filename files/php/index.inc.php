@@ -233,13 +233,13 @@ if (basename(__FILE__) == basename($_SERVER['PHP_SELF'])) {
 			</div>
 			<div class="form-row">
 				<label>
-					<span>Enter full URL:</span>
-					<input type="text" name="<?php echo htmlspecialchars($GLOBALS['_config']['url_var_name']) ?>" value="<?php echo isset($_GET[$GLOBALS['_config']['url_var_name']]) ? htmlspecialchars(decode_url($_GET[$GLOBALS['_config']['url_var_name']])) : (isset($_GET['__iv']) ? htmlspecialchars($_GET['__iv']) : ''); ?>" placeholder="http://www.example.com/index.html?ref=PHProxy" required="required"/>
+					<span>開きたいURLを入力してください:</span>
+					<input type="text" name="<?php echo htmlspecialchars($GLOBALS['_config']['url_var_name']) ?>" value="<?php echo isset($_GET[$GLOBALS['_config']['url_var_name']]) ? htmlspecialchars(decode_url($_GET[$GLOBALS['_config']['url_var_name']])) : (isset($_GET['__iv']) ? htmlspecialchars($_GET['__iv']) : ''); ?>" placeholder="https://scratch.mit.edu/users/iPad4610/" required="required"/>
 				</label>
 			</div>
 			<div class="form-row">
-				<button class="button-submit" type="submit">Proxify</button>
-				<label class="button-cancel" for="proxopttogl">Options</label>
+				<button class="button-submit" type="submit">アクセスする！</button>
+				<label class="button-cancel" for="proxopttogl">設定</label>
 			</div>
 <?php
 switch ($data['category']) {
@@ -251,17 +251,19 @@ switch ($data['category']) {
                 echo '<b>URL Error (' . htmlspecialchars($data['error']) . ')</b>: ';
                 switch ($data['type']) {
                     case 'internal':
-                        $message = 'Failed to connect to the specified host. '
-                            . 'Possible problems are that the server was not found, the connection timed out, or the connection refused by the host. '
-                            . 'Try connecting again and check if the address is correct.';
+                        $message = '指定されたホストへの接続に失敗しました。'
+
+.「可能な問題は、サーバーが見つからない、接続がタイムアウト、またはホストによって接続が拒否されたことです。'
+
+.「もう一度接続して、アドレスが正しいかどうかを確認してください.';
                         break;
                     case 'external':
                         switch ($data['error']) {
                             case 1:
-                                $message = 'The URL you\'re attempting to access is blacklisted by this server. Please select another URL.';
+                                $message = 'アクセスしようとしているURLは、このサーバーによってブラックリストに登録されています。別のURLを選択してください。';
                                 break;
                             case 2:
-                                $message = 'The URL you entered is malformed. Please check whether you entered the correct URL or not.';
+                                $message = '入力したURLは誤形です。正しいURLを入力したかどうかを確認してください.';
                                 break;
                         }
                         break;
@@ -283,7 +285,7 @@ switch ($data['category']) {
                 break;
         }
 
-        echo 'An error has occured while trying to browse through the proxy. <br />' . $message . '</p>';
+        echo 'プロックスを閲覧中にエラーが発生しましたy. <br />' . $message . '</p>';
         break;
 }
 ?>
@@ -318,11 +320,11 @@ foreach ($GLOBALS['_flags'] as $flag_name => $flag_value) {
 				<input type="hidden" name="<?php echo htmlspecialchars($GLOBALS['_config']['basic_auth_var_name']) ?>" value="<?php echo base64_encode($data['realm']) ?>" />
 				<div class="form-row">
 					<label>
-						<span>Enter username:</span>
+						<span>ユーザー名を入力してください:</span>
 						<input type="username" name="username" placeholder="Username">
 					</label>
 					<label>
-						<span>Enter password:</span>
+						<span>パスワードを入力してください:</span>
 						<input type="password" name="password" placeholder="Password">
 					</label>
 				</div>
@@ -339,6 +341,6 @@ foreach ($GLOBALS['_flags'] as $flag_name => $flag_value) {
 		</div>
 </form>
 <?php endif;?>
-<center><small><a href="https://github.com/PHProxy/phproxy" style="text-decoration: none;">PHProxy</a> <?=$GLOBALS['_version'];?></small></center>
+<center><small><a href="https://scratch.mit.edu/users/iPad4610/" style="text-decoration: none;">ipad4610のスクラッチ垢</a> <?=$GLOBALS['_version'];?></small></center>
 	</body>
 </html>
