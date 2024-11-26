@@ -1,0 +1,7 @@
+{
+  "name": "phproxyIsaku",
+  "scripts": {
+    "build": "yarn",
+    "start": "yarn start"
+  }
+}
